@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.example.administrator.databindingdemo.databinding.ActivityMainBinding;
 
+//
 public class MainActivity extends AppCompatActivity {
     Student mStudent = new Student("guo","chengqian");
     private ActivityMainBinding mBinding;
