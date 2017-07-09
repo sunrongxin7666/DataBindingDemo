@@ -12,6 +12,7 @@ import com.example.administrator.databindingdemo.databinding.ActivityMainBinding
 public class MainActivity extends AppCompatActivity {
     Student mStudent = new Student("guo","chengqian");
     private ActivityMainBinding mBinding;
+    Boolean visiblity = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +24,24 @@ public class MainActivity extends AppCompatActivity {
         //绑定变量
         mBinding.setStudent(mStudent);
         mBinding.setPresenter(new Presenter());
+        mBinding.setVisibility(visiblity);
         //binding.setVariable(BR.student,mStudent);
+        //viewstub inflate;
+        View inflate = mBinding.viewStub.getViewStub().inflate();
     }
 
     //事件绑定 方法类
     public class Presenter{
         public void onTextChanged(CharSequence s, int start, int before, int count){
             mStudent.setFirstName(s.toString());
-            mBinding.setStudent(mStudent);
+            //如果已经为该类继承了BaseObservable 就不需要再赋值了；
+            //mBinding.setStudent(mStudent);
         }
 
         public void onClick(View view){
             Toast.makeText(MainActivity.this,"onClick!",Toast.LENGTH_SHORT).show();
+            mBinding.setVisibility(!visiblity);
+            //mBinding.viewStub.getBinding().setVariable(BR.visibility,!visiblity);
         }
 
         public void onClickListenerBinding(Student student){
