@@ -14,6 +14,9 @@ public class Student extends BaseObservable{
     private String firstName;
     private String lastName;
     private Boolean isMan = true;
+    private String avater;
+
+
 
     //ObservableChar fullName; //如果只要几个字段是要通知变化的可以这样做。
     //ObservableArrayMap mArrayMap;
@@ -68,5 +71,13 @@ public class Student extends BaseObservable{
 
     public void setMan(Boolean man) {
         isMan = man;
+    }
+
+    public String getAvater() {
+        return avater;
+    }
+
+    public void setAvater(String avater) {
+        this.avater = avater;
     }
 }

@@ -22,4 +22,9 @@ public class StartActivity extends Activity {
 		Intent intent = new Intent(this, ListActivity.class);
 		startActivity(intent);
 	}
+
+	public void gotoCustomDemo(View view) {
+		Intent intent = new Intent(this, CustomActivity.class);
+		startActivity(intent);
+	}
 }
