@@ -2,9 +2,6 @@ package com.example.administrator.databindingdemo;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.databinding.ObservableArrayList;
-import android.databinding.ObservableArrayMap;
-import android.databinding.ObservableChar;
 
 /**
  * Created by Administrator on 2017-7-7.
@@ -14,7 +11,7 @@ public class Student extends BaseObservable{
     private String firstName;
     private String lastName;
     private Boolean isMan = true;
-    private String avater;
+    private String avatar;
 
 
 
@@ -56,6 +53,12 @@ public class Student extends BaseObservable{
         this.isMan = isMan;
     }
 
+    public Student(String firstName, String lastName, String url) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.avatar = url;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -73,11 +76,12 @@ public class Student extends BaseObservable{
         isMan = man;
     }
 
-    public String getAvater() {
-        return avater;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvater(String avater) {
-        this.avater = avater;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+        notifyChange();
     }
 }

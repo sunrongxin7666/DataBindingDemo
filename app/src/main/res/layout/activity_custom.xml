@@ -5,11 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="com.example.administrator.databindingdemo.Student"/>
         <variable
             name="student"
-            type="Student">
+            type="com.example.administrator.databindingdemo.Student">
         </variable>
 
     </data>

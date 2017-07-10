@@ -13,8 +13,7 @@ public class CustomActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mBinding = DataBindingUtil.setContentView(this,R.layout.activity_custom);
-		Student student = new Student("guo","xiaopang");
-		student.setAvater("https://avatars2.githubusercontent.com/u/1106500?v=2&s=460");
+		Student student = new Student("guo","xiaopang","https://avatars2.githubusercontent.com/u/1106500?v=2&s=460");
 		mBinding.setStudent(student);
 	}
 }
