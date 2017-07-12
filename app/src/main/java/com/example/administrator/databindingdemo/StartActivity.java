@@ -27,4 +27,19 @@ public class StartActivity extends Activity {
 		Intent intent = new Intent(this, CustomActivity.class);
 		startActivity(intent);
 	}
+
+	public void goToTwoWay(View view) {
+		Intent intent = new Intent(this, TowWayBindingActivity.class);
+		startActivity(intent);
+	}
+
+	public void gotoLambdaDemo(View view) {
+		Intent intent = new Intent(this, LambdaActivity.class);
+		startActivity(intent);
+	}
+
+	public void gotoAnimationDemo(View view) {
+		Intent intent = new Intent(this, AnimationActivity.class);
+		startActivity(intent);
+	}
 }

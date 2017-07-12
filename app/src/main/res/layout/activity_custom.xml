@@ -5,10 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"></import>
         <variable
             name="student"
             type="com.example.administrator.databindingdemo.Student">
         </variable>
+        <variable
+            name="v"
+            type="Boolean"/>
 
     </data>
     <LinearLayout
@@ -17,10 +21,17 @@
         android:orientation="vertical"
         tools:context="com.example.administrator.databindingdemo.CustomActivity">
         <ImageView
+            android:id="@+id/avatar"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:imageUrl = "@{student.avatar}"
+            android:visibility="@{v?View.VISIBLE:View.GONE}"
             app:placeholder = "@{@drawable/default_avatar}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{avatar.visibility}"
+            android:text="@{student.toString()}"/>
     </LinearLayout>
 </layout>
 

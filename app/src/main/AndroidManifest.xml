@@ -22,6 +22,12 @@
         </activity>
         <activity android:name=".CustomActivity">
         </activity>
+        <activity android:name=".TowWayBindingActivity">
+        </activity>
+        <activity android:name=".LambdaActivity">
+        </activity>
+        <activity android:name=".AnimationActivity">
+        </activity>
     </application>
 
 </manifest>
