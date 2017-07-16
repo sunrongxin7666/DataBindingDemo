@@ -21,7 +21,8 @@ public class TowWayBindingActivity extends AppCompatActivity {
 		model.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
 			@Override
 			public void onPropertyChanged(Observable sender, int propertyId) {
-				Toast.makeText(TowWayBindingActivity.this, String.valueOf(propertyId),
+				if(BR.name == propertyId)
+					Toast.makeText(TowWayBindingActivity.this, "姓名改变",
 						Toast.LENGTH_SHORT).show();
 			}
 		});

@@ -6,7 +6,6 @@ import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.TransitionManager;
-import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.administrator.databindingdemo.databinding.ActivityAnimationBinding;
@@ -28,7 +27,7 @@ public class AnimationActivity extends AppCompatActivity {
 		});
 	}
 	public class AnimatorPresenter{
-		public void onCheckedChanged(View v,boolean isChecked){
+		public void onCheckedChanged(boolean isChecked){
 			mBinding.setShowImage(isChecked);
 		}
 	}

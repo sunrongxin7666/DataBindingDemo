@@ -1,6 +1,7 @@
 package com.example.administrator.databindingdemo;
 
 import android.databinding.DataBindingUtil;
+import android.databinding.ObservableBoolean;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +11,9 @@ import com.example.administrator.databindingdemo.databinding.ActivityMainBinding
 
 //
 public class MainActivity extends AppCompatActivity {
-    Student mStudent = new Student("guo","chengqian");
+    Student mStudent = new Student("guo","xiaopang");
     private ActivityMainBinding mBinding;
-    Boolean visiblity = true;
+    Boolean visibility = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         //绑定变量
         mBinding.setStudent(mStudent);
         mBinding.setPresenter(new Presenter());
-        mBinding.setVisibility(visiblity);
+        mBinding.setVisibility(visibility);
         //binding.setVariable(BR.student,mStudent);
         //viewstub inflate;
         View inflate = mBinding.viewStub.getViewStub().inflate();
@@ -40,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         public void onClick(View view){
             Toast.makeText(MainActivity.this,"onClick!",Toast.LENGTH_SHORT).show();
-            mBinding.setVisibility(!visiblity);
-            //mBinding.viewStub.getBinding().setVariable(BR.visibility,!visiblity);
+            visibility = !visibility;
+            mBinding.setVisibility(visibility);
+            //mBinding.viewStub.getBinding().setVariable(BR.visibility,!visibility);
         }
 
         public void onClickListenerBinding(Student student){

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -19,15 +18,17 @@
         android:orientation="vertical"
         tools:context="com.example.administrator.databindingdemo.AnimationActivity">
         <ImageView
+            android:contentDescription="Animation Show"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/default_avatar"
             android:visibility="@{showImage?View.VISIBLE:View.GONE}"/>
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="showImage"
-            android:onCheckedChanged="@{presenter.onCheckedChanged}"/>
+            android:onCheckedChanged = "@{(v,isChecked)->presenter.onCheckedChanged(isChecked)}"/>
     </LinearLayout>
 </layout>
 
